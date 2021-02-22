@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/notes.css">
+    <link rel="stylesheet" href="styles/balloon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
         crossorigin="anonymous" />
@@ -30,6 +31,13 @@
                 <a href="members.html">
                     <span class="icon"><i class="fas fa-users"></i></span>
                     <span class="title">Miembros</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <span class="title">Mi perfil</span>
                 </a>
             </li>
 
@@ -71,18 +79,23 @@
         </div>
         <div class="todo-list">
             <div class="testing">
-                <button class="sort-btn fas fa-toggle-off" id="sort-btn">
-                    <label> 
-                    Color
-                    </label> 
-                </button>
-                <button class="sort-btn fas fa-toggle-off" id="sort-status">
-                    <label> 
-                    Status
-                    </label> 
-                </button>
+                <div aria-label="Ordenar por color" data-balloon-pos="down">
+                    <button class="sort-btn fas fa-toggle-off" id="sort-btn">
+                        <label> 
+                        Color
+                        </label> 
+                    </button>
+                </div>
+                <div aria-label="Ordenar por completados" data-balloon-pos="down">
+                    <button class="sort-btn fas fa-toggle-off" id="sort-status">
+                        <label> 
+                        Status
+                        </label> 
+                    </button>
+                </div>
+                
             </div>
-            
+
             <div class="todo-body">
                 <div class="notes">
                     <ul class="todo-lists" id="todo-lists"></ul>
@@ -108,9 +121,9 @@
                         </div>
                     </div>
                     <div class="style-buttons">
-                        <button class="style-button bold">B</button>
-                        <button class="style-button italics">I</button>
-                        <button class="style-button underline">S</button>
+                        <button class="style-button bold" aria-label="Negrita" data-balloon-pos="up">B</button>
+                        <button class="style-button italics" aria-label="Italica" data-balloon-pos="up">I</button>
+                        <button class="style-button underline tooltip-slide" aria-label="Subrayado" data-balloon-pos="up">S</button>
                     </div>
                 </div>
             </div>

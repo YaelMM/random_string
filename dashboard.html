@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/balloon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
         crossorigin="anonymous" />
@@ -32,6 +33,13 @@
                     <span class="title">Miembros</span>
                 </a>
 
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <span class="title">Mi perfil</span>
+                </a>
             </li>
 
             <li class="darkModeToggle">
@@ -79,7 +87,10 @@
 
     <!-- Floating button -->
     <div class="action">
-        <span>+</span>
+        <div aria-label="Crear/Unirse a un grupo" data-balloon-pos="left">
+            <span>+</span>
+        </div>
+        
         <ul>
             <li>
                 <button class="new-note"> <i class="fas fa-plus-circle"></i>Crea

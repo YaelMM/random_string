@@ -1,0 +1,426 @@
+/* color variables */
+:root{
+    --main: #2c333f;
+    --secondary: #BB86FC;
+    --hover: #52440F;
+    --buttons: #03b4a3;
+    --delete: #f0444a;
+
+    --background-dark: rgb(48, 48, 48);
+    --text-dark: #ffffff;
+    --body-dark: rgb(20, 20, 20);
+
+}
+
+/* General Properties */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+}
+
+/* Header Properties */
+header{
+    font-size: 1.2rem;
+    padding-left: 9vh;
+    width: 100%;
+    margin: auto;
+    color: #ffffff;
+    background: var(--main);
+    height: 64px;
+    padding-top: 0.5rem;
+}
+
+/* Nav Properties */
+.menu{
+    position: fixed;
+    height: 100%;
+    width: 9vh;
+    background: var(--main);
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 1;
+    top:0;
+}
+
+.menu:hover,
+.menu.active{
+    width: 300px;
+}
+
+.menu ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.menu ul:first-child{
+    margin-top: 3.5rem;
+}
+
+.menu ul li{
+    position: relative;
+    width: 100%;
+}
+
+.menu ul li:hover{
+    background:  var(--secondary);
+}
+
+.menu ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.menu ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 9vh;
+    height: 9vh;
+    line-height: 9vh;
+    text-align: center;
+}
+
+.menu ul li a .icon .fa{
+    font-size: 24px;
+}
+
+.menu ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 9vh;
+    line-height: 9vh;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.toggle{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 64px;
+    background: var(--secondary);
+    cursor: pointer;
+    z-index: 3;
+}
+
+.toggle.active{
+    background:  var(--delete);
+}
+
+.toggle::before{
+    content: '\f0c9';
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.toggle.active::before{
+    content: '\f00d';
+}
+
+/* profile properties */
+.myprofile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1.5rem;
+}
+
+.myprofile h1{
+    font-size: 3.5rem;
+    margin: 1.5rem;
+}
+
+.myprofile p{
+    font-size: 1.5rem;
+}
+
+.card{
+    width: 45%;
+    margin: 0 auto;
+    box-shadow: 1px 1px 6px #5f6366;
+    border-radius: 4px;
+    padding: 0.8rem;
+}
+
+.card .title{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.card p{
+    margin-top: 0.5rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+}
+
+.social-buttons{
+    margin-top: 0.5rem;
+    display: flex;
+}
+
+.social-button{
+    height: 2.875rem;
+    width: 2.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.45rem;
+    border-radius: 50%;
+    border: 1px solid #333;
+    font-size: 1rem;
+}
+
+#facebook{
+    color: #2d569e;
+    border-color: #2d569e;
+}
+  
+#twitter{
+    color: #5b8fe9;
+    border-color: #5b8fe9;
+}
+  
+#google{
+    color: #ea4335;
+    border-color: #ea4335;
+}
+
+#email{
+    color: #57bd9e;
+    border-color: #57bd9e;
+}
+
+/* configuration buttons */
+.config-buttons{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.btn{
+    border-radius: 20px;
+    margin-right: 1rem;
+    border: none;
+    background: none;
+    padding: 0.5rem;
+    text-align: center;
+    color: var(--text-dark);
+    transition: 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.disable,.cancel{
+    font-weight: 600;
+    background: var(--delete);
+}
+
+.disable:hover, .cancel:hover{
+    background: #b11b20;
+}
+
+.user, .psswrd,.submit-btn, .accept{
+    background: var(--buttons);
+}
+
+.user:hover, .psswrd:hover, .submit-btn:hover, .accept:hover{
+    background: var(--hover);
+}
+
+/* Dark mode propperties */
+body.dark{
+    background: var(--body-dark);
+    color: var(--text-dark);
+}
+
+.card.dark{
+    background: var(--background-dark);
+}
+
+.modal.dark, .modal-deact.dark{
+    background: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.modal.dark input, .modal-deact.dark input{
+    background: var(--body-dark);
+}
+
+/* Properties for modal */
+
+.modal, .modal-deact{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    transition: 200ms ease-in-out;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: #ffffff;
+    width: 70%;
+    max-width: 80%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 1rem 1rem;
+}
+  
+.modal.active, .modal-deact.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.close-btn{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--delete);
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 2.25rem;
+    color: inherit;
+    font-weight: bold;
+}
+
+.modal-title{
+    text-align: center;
+    width: 100%;
+}
+
+.modal-body{
+    margin: 0 auto;
+    width: 70%;
+}
+  
+.modal-body input{
+    margin: 1.25rem 0;
+    padding: 0.1rem;
+    width: 100%;
+    border: 1px solid var(--secondary);
+    border-radius: 55px;
+    color: inherit;
+    font-size: 1.25rem;
+}
+
+.modal-btn-deact{
+    display: flex;
+    margin: 0 auto;
+    width: min-content;
+    padding-top: 1rem;
+}
+
+.modal-btn{
+    width: min-content;
+    margin: 0 auto;
+}
+
+.submit-btn,.accept,.cancel{
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    z-index: 9;
+}
+  
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Properties for popup when sending a email password */
+
+.copy-popup{
+    position: fixed;
+    bottom: 70px;
+    right: 50px;
+    width: 300px;
+    height: 87px;
+    background: inherit;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 11px;
+    font-size: 18px;
+    z-index: 15;
+    transform: scale(0);
+    transition: 200ms ease-in-out;
+}
+.copy-popup.active{
+    transform: scale(1);
+}
+
+.copy-popup span{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.copy-popup span i{
+    color: #31a17c;
+    padding-right: 1rem;
+}
+
+/* Properties for medium devices */
+@media (max-width: 870px){
+
+    .card{
+        margin: 0 auto;
+        width: 90%;
+    }
+    .menu{
+        left: -9vh;
+        z-index: 2;
+    }
+
+    .menu.active{
+        left: 0px;
+        width: 100%;
+        z-index: 2;
+    }
+    .config-buttons{
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 1.5rem;
+    }
+
+    .btn{
+        margin-top: 0.5rem;
+    }
+
+    .copy-popup{
+        right: 35px;
+    }
+}

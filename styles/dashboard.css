@@ -24,7 +24,7 @@
 /* Header Properties */
 header{
     font-size: 1.2rem;
-    padding-left: 4rem;
+    padding-left: 9vh;
     width: 100%;
     margin: auto;
     color: #ffffff;
@@ -162,7 +162,7 @@ header{
     right: 50px;
     width: 200px;
     height: 87px;
-    background: #FFFFFF;
+    background: inherit;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
     border-radius: 11px;
     font-size: 18px;
@@ -187,6 +187,10 @@ header{
     color: #31a17c;
     padding-right: 1rem;
 }
+
+
+
+
 
 /* Properties for the notes */
 
@@ -236,6 +240,13 @@ header{
 	border-radius: 3px;
     padding: 15px;
     margin-left: 5rem;
+}
+/* balloon */
+
+
+.tooltip {
+    --balloon-font-size: 15px;
+    --balloon-move: 55px;
 }
 
 /* Exit button properties */
@@ -378,7 +389,13 @@ header{
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }
-.action span{
+
+.action div {
+    width: 100%;
+    height: 100%;
+}
+
+.action div span{
     position: relative;
     width: 100%;
     height: 100%;

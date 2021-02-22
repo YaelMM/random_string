@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+    <title>Document</title>
+</head>
+
+<header>
+    <h1>To-Do List</h1>
+</header>
+
+<body>
+
+    <body class="">
+        <!-- Navbar -->
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="title">Inicio</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="members.html">
+                        <span class="icon"><i class="fas fa-users"></i></span>
+                        <span class="title">Miembros</span>
+                    </a>
+
+                </li>
+
+                <li>
+                    <a href="profile.html">
+                        <span class="icon"><i class="fas fa-user"></i></span>
+                        <span class="title">Mi perfil</span>
+                    </a>
+
+                </li>
+
+                <li class="darkModeToggle">
+                    <a>
+                        <span class="icon"><i class="fas fa-adjust"></i></span>
+                        <span class="title">Tema claro/oscuro</span>
+                    </a>
+                </li>
+
+                <li id="logout">
+                    <a href="#">
+                        <span class=" icon"> <i class="fas fa-sign-out-alt"></i></i></span>
+                        <span class="title">Cerrar sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="toggle"></div>
+
+        <!--My profile section-->
+        <div class="myprofile">
+            <h1>Mi perfil</h1>
+            <p>Cambia la configuración de tu cuenta.</p>
+        </div>
+        <div class="card">
+            <span class="title">Nombre de usuario</span>
+            <p id="name-user">Cargando...</p>
+            <span class="title">Correo electrónico</span>
+            <p id="email-user">Cargando...</p>
+            <span class="title">Redes sociales conectadas.</span>
+            <div class="social-buttons">
+
+            </div>
+        </div>
+        <div class="config-buttons">
+            <button class="btn user">cambiar nombre de usuario</button>
+            <button class="btn psswrd">cambiar la contraseña</button>
+            <button class="btn disable">desactivar cuenta</button>
+        </div>
+
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">Escribe tu nuevo nombre</div>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="return false">
+                    <input type="text" name="input-modal" id="title-modal" required>
+                </form>
+                <div class="modal-btn"><button class="btn submit-btn" id="submit-btn-name">Aceptar</button></div>
+            </div>
+        </div>
+
+        <div class="modal" id="error-popup">
+            <div class="modal-header">
+                <div class="modal-title">No se ha podido mandar el correo de cambio de contraseña debido a que esta cuenta solo esta vinculada a una red social</div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-btn"><button class="btn submit-btn" id="submit-btn-error">Aceptar</button></div>
+            </div>
+        </div>
+
+
+        <div class="modal-deact">
+            <div class="modal-header">
+                <div class="modal-title" id="text-desactivate">¿Seguro que quieres desactivar tu cuenta?</div>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="body-desactivate"></div>
+                <div class="modal-btn-deact">
+                    <button class="btn accept">Aceptar</button>
+                    <button class="btn cancel">Cancelar</button>
+                </div>
+            </div>
+        </div>
+        <div id="overlay"></div>
+
+        <!-- Notification popup -->
+        <div class="copy-popup">
+            <span><i class="fas fa-check"></i>Se acaba de mandar un correo</span>
+        </div>
+    </body>
+    <script src="scripts/darkmode.js"></script>
+
+        <!-- SDK FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-functions.js"></script>
+
+<script src="scripts/firebaseInit.js"></script>
+<script src="scripts/logout.js"></script>
+<script src="scripts/profile.js"></script>
+
+</html>

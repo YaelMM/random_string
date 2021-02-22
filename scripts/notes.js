@@ -35,30 +35,7 @@ Sortb.addEventListener("click", function (event) {
     }
     else
     {
-        Sortb.className="sort-btn fas fa-toggle-off";
-        //Reload the notes so that they appear in the order they were created and not by colour
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                const userID = user.uid
-                let groupRef = firebase.database().ref().child('groups/' + window.location.hash.substring(1))
-        
-        
-        
-                groupRef.child('notes').once('value', note => {
-                    CleanNotes();
-                let iamAdmin
-                    db.ref(`groups/${idGroup}/admins/${user.uid}`).once('value', (e) => {
-                        iamAdmin = e.val()
-                    })
-                    note.forEach(note => {
-                        NewNote(note.child('text').val(), note.child('color').val(), note.child('status').val(), note.key, iamAdmin, note.child('favourite').val(), note.child('style').val())
-                    });
-                })
-                favourites();
-            }
-        })
-        favourites();
-        SortC=false;
+        location.reload();
     }
 });
 
@@ -75,28 +52,7 @@ SortStatus.addEventListener("click", function (event) {
     {
         SortStatus.className="sort-btn fas fa-toggle-off";
         //Reload the notes so that they appear in the order they were created and not by colour
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                const userID = user.uid
-                let groupRef = firebase.database().ref().child('groups/' + window.location.hash.substring(1))
-        
-        
-        
-                groupRef.child('notes').once('value', note => {
-                    CleanNotes();
-                let iamAdmin
-                    db.ref(`groups/${idGroup}/admins/${user.uid}`).once('value', (e) => {
-                        iamAdmin = e.val()
-                    })
-                    note.forEach(note => {
-                        NewNote(note.child('text').val(), note.child('color').val(), note.child('status').val(), note.key, iamAdmin, note.child('favourite').val(), note.child('style').val())
-                    });
-                })
-                favourites();
-            }
-        })
-        favourites();
-        SortS=false;
+        location.reload();
     }
 });
 
